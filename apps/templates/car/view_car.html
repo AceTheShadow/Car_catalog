@@ -1,0 +1,25 @@
+{% extends "layouts/base-front.html" %}
+
+{% block title %} {{ item.make.make_name}} {{ item.model.model_name }} {% endblock %}
+
+{% block content %}
+
+  <div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">{{ item.make.make_name}} {{ item.model.model_name }}</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-1">
+        <div class="feature col">
+          {% if item.image %}
+            <div class="d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+              <img src="/static/assets/images/{{ item.image }}">
+            </div>
+          {% endif %}
+          <p>{{ item.description }}</p>
+          <a href="/" class="icon-link">
+            Back to All Cars
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+    </div>
+  </div>
+
+{% endblock content %}
